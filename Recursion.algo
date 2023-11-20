@@ -1,0 +1,16 @@
+PROCEDURE BOOLEAN isPalindrome(s:STRING, i: INTEGER:= 0, j: INTEGER:= s.length-1)
+VAR
+BEGIN
+    IF (i<>j AND s[i]=s[j]) THEN
+        isPalindrome(s,i+1,j-1);
+    END_IF
+    // if the word is empty s.length is 0 hence j=-1 so less than 0
+    IF (i=j OR j<0) THEN 
+        return true
+    END_IF
+    IF (i<>j AND s[i]<>s[j]) THEN
+        return false
+    END_IF
+END isPalindrome
+// the algorithm checks the first char with the last if they are the same it increments the 
+// start and decrements the end until they both meet and it confirms the word is a palindrome 
